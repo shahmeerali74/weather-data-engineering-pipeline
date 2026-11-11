@@ -1,0 +1,28 @@
+services:
+  postgres-db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: weather_analytics
+      POSTGRES_USER: weather_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - weather-postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weather_user -d weather_analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  weather-pipeline:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ${HOME}/.aws:/root/.aws:ro
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+
+volumes:
+  weather-postgres-data:
+    external: true
