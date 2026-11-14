@@ -17,3 +17,11 @@ __pycache__/
 # Application logs
 logs/
 *.log
+# Backup files
+*.bak
+venv/
+.DS_Store
+#i have the awscli folder which i dont want to the repo
+# Local AWS CLI installation
+/aws/
+/aws/

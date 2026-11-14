@@ -7,15 +7,15 @@ logger=get_logger(__name__)
 
 INSERT_QUERY = """
     INSERT INTO weather_records (
-        city,
-        latitude,
-        longitude,
-        temperature,
-        temperature_unit,
-        observation_time,
-        ingestion_timestamp,
-        weather_code,
-        weather_description
+            city,
+            latitude,
+            longitude,
+            temperature,
+            temperature_unit,
+            observation_time,
+            ingestion_timestamp,
+            weather_code,
+            weather_description
     )
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
 
