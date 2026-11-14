@@ -1,5 +1,8 @@
 Real-World Weather Data Engineering Pipeline
 An end-to-end data engineering project that extracts real-time weather data from the Open-Meteo API, stores raw data in AWS S3, transforms and validates records using Python and Pandas, and loads structured data into PostgreSQL using Apache Airflow orchestration.
+## Project Architecture
+<img width="1780" height="1612" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/99e57258-c52d-4ff5-b935-d04783cad268" />
+
 Project Architecture
 Open-Meteo API
       |
